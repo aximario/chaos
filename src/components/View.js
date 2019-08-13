@@ -9,39 +9,35 @@ function horizontalAlign (align) {
 
 function verticalAlign (align) {
   if (align === 'center') return 'center'
-    if (align === 'right' || align === 'top') return 'flex-start'
-    if (align === 'left' || align === 'bottom') return 'flex-end'
+  if (align === 'right' || align === 'top') return 'flex-start'
+  if (align === 'left' || align === 'bottom') return 'flex-end'
 }
 
-const Div = styled.div`
+const View = styled.div`
   box-sizing: border-box;
   display: flex;
   width: ${props => props.w};
   height: ${props => props.h};
-  justify-content: ${props => horizontalAlign(props.horizontalAlign)};
-  align-items: ${props => horizontalAlign(props.verticalAlign)};
+  ${props => props.horizontalAlign && `justify-content: ${props => horizontalAlign(props.horizontalAlign)};`}
+  ${props => props.verticalAlign && `align-items: ${props => horizontalAlign(props.verticalAlign)};`}
   ${props => props.column && `
     flex-direction: column;
-    align-items: ${props => verticalAlign(props.horizontalAlign)};
-    justify-content: ${props => verticalAlign(props.verticalAlign)};
+    ${props => props.horizontalAlign && `align-items: ${props => verticalAlign(props.horizontalAlign)};`}
+    ${props => props.verticalAlign && `justify-content: ${props => verticalAlign(props.verticalAlign)};`}
   `}
-  ${props => Boolean(props.radius) && `border-radius: ${props.radius}`}
-  ${props => Boolean(props.border) && `border: ${props.border}`}
-  ${props => Boolean(props.bg) && `background: ${props.bg}`}
+  border-radius: ${props => props.radius};
+  border: ${props => props.border};
+  background: ${props => props.bg};
 `
 
-Div.defaultProps = {
+View.defaultProps = {
   w: '100px',
   h: '100px',
-  column: false,
-  horizontalAlign: 'left',
-  verticalAlign: 'center',
-  radius: '0',
   border: '1px solid #999',
   bg: '#aaa'
 }
 
-Div.propTypes = {
+View.propTypes = {
   w: PropTypes.string,
   h: PropTypes.string,
   column: PropTypes.bool,
@@ -52,4 +48,4 @@ Div.propTypes = {
   bg: PropTypes.string
 }
 
-export default Div
+export default View

@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
-import Div from './components/Div'
+import View from './components/View'
+import Text from './components/Text'
 
 function App() {
   return (
-    <Div />
+    <View>
+      <Text h="60px" lineHeight="50px">Hello World</Text>
+    </View>
   );
 }
 
