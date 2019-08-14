@@ -16,8 +16,8 @@ function verticalAlign (align) {
 const View = styled.div`
   box-sizing: border-box;
   display: flex;
-  width: ${props => props.w};
-  height: ${props => props.h};
+  ${props => props.w && `width: ${props.w};`}
+  ${props => props.h && `height: ${props.h};`}
   ${props => props.horizontalAlign && `justify-content: ${props => horizontalAlign(props.horizontalAlign)};`}
   ${props => props.verticalAlign && `align-items: ${props => horizontalAlign(props.verticalAlign)};`}
   ${props => props.column && `
@@ -25,17 +25,10 @@ const View = styled.div`
     ${props => props.horizontalAlign && `align-items: ${props => verticalAlign(props.horizontalAlign)};`}
     ${props => props.verticalAlign && `justify-content: ${props => verticalAlign(props.verticalAlign)};`}
   `}
-  border-radius: ${props => props.radius};
+  ${props => props.radius && `border-radius: ${props => props.radius};`}
   border: ${props => props.border};
   background: ${props => props.bg};
 `
-
-View.defaultProps = {
-  w: '100px',
-  h: '100px',
-  border: '1px solid #999',
-  bg: '#aaa'
-}
 
 View.propTypes = {
   w: PropTypes.string,

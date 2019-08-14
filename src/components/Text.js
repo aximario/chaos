@@ -10,11 +10,8 @@ const Text = styled.span`
   ${props => props.fontSize && `font-size: ${props.fontSize};`}
   ${props => props.lineHeight && `line-height: ${props.lineHeight};`}
   ${props => props.textAlign && `text-align: ${props.textAlign};`}
-  ${props => props.color && `text-align: ${props.color};`}
+  ${props => props.color && `color: ${props.color};`}
 `
-Text.defaultProps = {
-  h: 'fit-content'
-}
 
 Text.propTypes = {
   w: PropTypes.string,
