@@ -1,17 +1,16 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { compose, size, typography } from '../styleProps'
 
-const Text = styled.span`
-  display: inline-block;
-  ${props => props.w && `width: ${props.w};`}
-  ${props => props.h && `height: ${props.h};`}
-  ${props => props.fontFamily && `font-family: ${props.fontFamily};`}
-  ${props => props.fontWeight && `font-weight: ${props.fontWeight};`}
-  ${props => props.fontSize && `font-size: ${props.fontSize};`}
-  ${props => props.lineHeight && `line-height: ${props.lineHeight};`}
-  ${props => props.textAlign && `text-align: ${props.textAlign};`}
-  ${props => props.color && `color: ${props.color};`}
-`
+const Text = styled.span(props => {
+  const styleObj = {
+    display: 'inline-block'
+  }
+  if (props.color) styleObj.color = props.color
+  return compose(props, [
+    styleObj, size, typography
+  ])
+})
 
 Text.propTypes = {
   w: PropTypes.string,

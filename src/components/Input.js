@@ -1,21 +1,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { size, typography, border, compose } from '../styleProps'
 
-function str (props) {
-  const styleObj = {
-    border: props.border
-  }
-  if (props.w) styleObj.width = props.w
-  if (props.h) styleObj.height = props.h
-  if (props.fontFamily) styleObj.fontFamily = props.fontFamily
-  if (props.fontWeight) styleObj.fontWeight = props.fontWeight
-  if (props.fontSize) styleObj.fontSize = props.fontSize
-  if (props.textAlign) styleObj.textAlign = props.textAlign
-  if (props.color) styleObj.color = props.color
-  if (props.radius) styleObj.radius = props.radius
-  if (props.bg) styleObj.background = props.bg
-  return styleObj
-}
 // return `
 //   outline: none;
 //   ${props => props.w && `width: ${props.w};`}
@@ -30,7 +16,15 @@ function str (props) {
 //   border: ${props => props.border};
 // `
 
-const Input = styled.input(str)
+const Input = styled.input(props => {
+  const styleObj = {
+    outline: 'none'
+  }
+  if (props.color) styleObj.color = props.color
+  return compose(props, [
+    styleObj, size, typography, border
+  ])
+})
 
 Input.defaultProps = {
   border: '1px solid #999'
