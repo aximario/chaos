@@ -16,10 +16,54 @@ function verticalAlign (align) {
   if (align === 'between') return 'space-between'
 }
 
-const View = styled.div.attrs(props => {
+const List = styled.ul.attrs(props => {
   const obj = {}
+  obj.fd = 'column'
   if (props.column) {
-    obj.fd = 'column'
+    if (props.horizontalAlign) {
+      obj.ai = verticalAlign(props.horizontalAlign)
+    }
+    if (props.verticalAlign) {
+      obj.jc = verticalAlign(props.verticalAlign)
+    }
+  } else {
+    if (props.horizontalAlign) {
+      obj.jc = horizontalAlign(props.horizontalAlign)
+    }
+    if (props.verticalAlign) {
+      obj.ai = horizontalAlign(props.verticalAlign)
+    }
+  }
+  return obj
+})`
+  box-sizing: border-box;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  ${w}
+  ${h}
+  ${br}
+  ${b}
+  ${bg}
+  ${props => props.fd && `flex-direction: ${props.fd};`}
+  ${props => props.jc && `justify-content: ${props.jc};`}
+  ${props => props.ai && `align-items: ${props.ai};`}
+`
+
+List.defaultProps = {
+  column: true
+}
+
+List.propTypes = {
+  column: PropTypes.bool,
+  horizontalAlign: PropTypes.oneOf(['left', 'right', 'center']),
+  verticalAlign: PropTypes.oneOf(['top', 'bottom', 'center'])
+}
+
+List.Item = styled.li.attrs(props => {
+  const obj = {}
+  obj.fd = 'column'
+  if (props.column) {
     if (props.horizontalAlign) {
       obj.ai = verticalAlign(props.horizontalAlign)
     }
@@ -48,10 +92,4 @@ const View = styled.div.attrs(props => {
   ${props => props.ai && `align-items: ${props.ai};`}
 `
 
-View.propTypes = {
-  column: PropTypes.bool,
-  horizontalAlign: PropTypes.oneOf(['left', 'right', 'center', 'between']),
-  verticalAlign: PropTypes.oneOf(['top', 'bottom', 'center', 'between'])
-}
-
-export default View
+export default List
