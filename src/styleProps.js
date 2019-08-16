@@ -52,3 +52,18 @@ export function c (props) {
 export function bg (props) {
   return props.bg && `background: ${props.bg};`
 }
+
+// justify-content
+export function jc (props) {
+  return props.jc && `justify-content: ${props.jc};`
+}
+
+// align-items
+export function ai (props) {
+  return props.ai && `align-items: ${props.ai};`
+}
+
+// flex-direction
+export function fd (props) {
+  return props.fd && `flex-direction: ${props.fd};`
+}
