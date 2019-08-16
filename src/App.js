@@ -7,7 +7,7 @@ import Input from './components/Input'
 function App() {
   return (
     <View>
-      <Text>Hello World</Text>
+      <Text c="red">Hello World</Text>
       <Input bg="green" />
     </View>
   );

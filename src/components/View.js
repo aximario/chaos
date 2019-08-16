@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { w, h, br, b, bg } from '../styleProps'
 
 function horizontalAlign (align) {
   if (align === 'center') return 'center'
@@ -16,8 +17,8 @@ function verticalAlign (align) {
 const View = styled.div`
   box-sizing: border-box;
   display: flex;
-  ${props => props.w && `width: ${props.w};`}
-  ${props => props.h && `height: ${props.h};`}
+  ${w}
+  ${h}
   ${props => props.horizontalAlign && `justify-content: ${props => horizontalAlign(props.horizontalAlign)};`}
   ${props => props.verticalAlign && `align-items: ${props => horizontalAlign(props.verticalAlign)};`}
   ${props => props.column && `
@@ -25,20 +26,15 @@ const View = styled.div`
     ${props => props.horizontalAlign && `align-items: ${props => verticalAlign(props.horizontalAlign)};`}
     ${props => props.verticalAlign && `justify-content: ${props => verticalAlign(props.verticalAlign)};`}
   `}
-  ${props => props.radius && `border-radius: ${props => props.radius};`}
-  border: ${props => props.border};
-  background: ${props => props.bg};
+  ${br}
+  ${b}
+  ${bg}
 `
 
 View.propTypes = {
-  w: PropTypes.string,
-  h: PropTypes.string,
   column: PropTypes.bool,
   horizontalAlign: PropTypes.oneOf(['left', 'right', 'center']),
-  verticalAlign: PropTypes.oneOf(['top', 'bottom', 'center']),
-  radius: PropTypes.string,
-  border: PropTypes.string,
-  bg: PropTypes.string
+  verticalAlign: PropTypes.oneOf(['top', 'bottom', 'center'])
 }
 
 export default View
