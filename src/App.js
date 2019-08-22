@@ -10,6 +10,7 @@ function App() {
   return (
     <View
       horizontalAlign="between"
+      h="100vh"
     >
       <List>
         <List.Item>View</List.Item>
