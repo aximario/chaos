@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css';
-import View from './components/View'
-import Text from './components/Text'
-import Input from './components/Input'
-import List from './components/List'
+import View from './lib/View'
+import List from './lib/List'
 import EditPanel from './EditPanel'
 
 function App() {

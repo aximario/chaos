@@ -1,5 +1,4 @@
 import React from 'react'
-// import styled from 'styled-components'
 import Label from '../lib/Label'
 
 export function PropLabel ({ children }) {

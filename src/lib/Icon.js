@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { w, h } from '../styleProps'
 
-const Label = styled.img.attrs(props => ({
+const Icon = styled.img.attrs(props => ({
   w: props.size,
   h: props.size
 }))`
@@ -9,4 +9,4 @@ const Label = styled.img.attrs(props => ({
   ${h}
 `
 
-export default Label
+export default Icon
