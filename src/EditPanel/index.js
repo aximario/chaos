@@ -10,12 +10,15 @@ import HorizontalRight from '../images/HorizontalRight.svg'
 import VerticalTop from '../images/VerticalTop.svg'
 import VerticalCenter from '../images/VerticalCenter.svg'
 import VerticalBottom from '../images/VerticalBottom.svg'
+import HorizontalBetween from '../images/HorizontalBetween.svg'
+import VerticalBetween from '../images/VerticalBetween.svg'
 
 export default function EditPanel () {
   return (
     <View
       w="240px"
       column
+      bg="#fff"
     >
       <View>
         <View h="30px" verticalAlign="center">
@@ -37,7 +40,7 @@ export default function EditPanel () {
         </PropLabel>
         <Input />
       </View>
-      <View h="30px" verticalAlign="center">
+      <View h="30px" verticalAlign="center" horizontalAlign="between">
         <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
           <Icon src={HorizontalLeft} size="16px" />
         </View>
@@ -55,6 +58,12 @@ export default function EditPanel () {
         </View>
         <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
           <Icon src={VerticalBottom} size="16px" />
+        </View>
+        <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
+          <Icon src={HorizontalBetween} size="16px" />
+        </View>
+        <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
+          <Icon src={VerticalBetween} size="16px" />
         </View>
       </View>
     </View>
