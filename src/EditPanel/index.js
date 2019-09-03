@@ -4,14 +4,7 @@ import { PropLabel } from '../components/Typography'
 import Input from '../lib/Input'
 import Icon from '../lib/Icon'
 import BorderRadius from '../images/BorderRadius.svg'
-import HorizontalLeft from '../images/HorizontalLeft.svg'
-import HorizontalCenter from '../images/HorizontalCenter.svg'
-import HorizontalRight from '../images/HorizontalRight.svg'
-import VerticalTop from '../images/VerticalTop.svg'
-import VerticalCenter from '../images/VerticalCenter.svg'
-import VerticalBottom from '../images/VerticalBottom.svg'
-import HorizontalBetween from '../images/HorizontalBetween.svg'
-import VerticalBetween from '../images/VerticalBetween.svg'
+import Layout from './Layout'
 
 export default function EditPanel () {
   return (
@@ -40,32 +33,7 @@ export default function EditPanel () {
         </PropLabel>
         <Input />
       </View>
-      <View h="30px" verticalAlign="center" horizontalAlign="between">
-        <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
-          <Icon src={HorizontalLeft} size="16px" />
-        </View>
-        <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
-          <Icon src={HorizontalCenter} size="16px" />
-        </View>
-        <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
-          <Icon src={HorizontalRight} size="16px" />
-        </View>
-        <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
-          <Icon src={VerticalTop} size="16px" />
-        </View>
-        <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
-          <Icon src={VerticalCenter} size="16px" />
-        </View>
-        <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
-          <Icon src={VerticalBottom} size="16px" />
-        </View>
-        <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
-          <Icon src={HorizontalBetween} size="16px" />
-        </View>
-        <View w="24px" h="24px" verticalAlign="center" horizontalAlign="center">
-          <Icon src={VerticalBetween} size="16px" />
-        </View>
-      </View>
+      <Layout />
     </View>
   )
 }
