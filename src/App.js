@@ -1,22 +1,15 @@
 import React from 'react';
 import './App.css';
-import View from './lib/View'
-import List from './lib/List'
-import EditPanel from './EditPanel'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Demo from './Demo'
 
 function App() {
   return (
-    <View
-      horizontalAlign="between"
-      h="100vh"
-    >
-      <List>
-        <List.Item>View</List.Item>
-        <List.Item>Text</List.Item>
-        <List.Item>Input</List.Item>
-      </List>
-      <EditPanel />
-    </View>
+    <Router>
+      <>
+        <Route path='/demo' component={Demo} />
+      </>
+    </Router>
   );
 }
 
