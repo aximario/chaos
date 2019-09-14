@@ -24,8 +24,12 @@ export default function Typography () {
       <Headline4>Headline4</Headline4>
       <Headline5>Headline5</Headline5>
       <Headline6>Headline6</Headline6>
-      <Subtitle1>Subtitle1</Subtitle1>
-      <Subtitle2>Subtitle2</Subtitle2>
+      <div>
+        <Subtitle1>Subtitle1</Subtitle1>
+      </div>
+      <div>
+        <Subtitle2>Subtitle2</Subtitle2>
+      </div>
       <div>
         <Body1>Body1</Body1>
       </div>

@@ -1,11 +1,21 @@
-// width
-export function w (props) {
-  return props.w && `width: ${props.w};`
-}
-
 // height
 export function h (props) {
   return props.h && `height: ${props.h};`
+}
+
+// margin
+export function m (props) {
+  return props.m && `margin: ${props.m};`
+}
+
+// padding
+export function p (props) {
+  return props.p && `padding: ${props.p};`
+}
+
+// width
+export function w (props) {
+  return props.w && `width: ${props.w};`
 }
 
 // font-family
