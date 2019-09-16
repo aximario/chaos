@@ -1,3 +1,23 @@
+// border
+export function b (props) {
+  return props.b && `border: ${props.b};`
+}
+
+// background
+export function bg (props) {
+  return props.bg && `background: ${props.bg};`
+}
+
+// border-radius
+export function br (props) {
+  return props.br && `border-radius: ${props.br};`
+}
+
+// color
+export function c (props) {
+  return props.c && `color: ${props.c};`
+}
+
 // height
 export function h (props) {
   return props.h && `height: ${props.h};`
@@ -41,26 +61,6 @@ export function lh (props) {
 // text-align
 export function ta (props) {
   return props.ta && `text-align: ${props.ta};`
-}
-
-// border-radius
-export function br (props) {
-  return props.br && `border-radius: ${props.br};`
-}
-
-// border
-export function b (props) {
-  return props.b && `border: ${props.b};`
-}
-
-// color
-export function c (props) {
-  return props.c && `color: ${props.c};`
-}
-
-// background
-export function bg (props) {
-  return props.bg && `background: ${props.bg};`
 }
 
 // justify-content
