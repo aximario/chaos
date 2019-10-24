@@ -28,12 +28,6 @@ export default function View ({ children, width, height, backgroundColor, ...pro
   )
 }
 
-View.defaultProps = {
-  width: '100px',
-  height: '100px',
-  backgroundColor: '#aaa'
-}
-
 View.propTypes = {
   column: PropTypes.bool,
   horizontalAlign: PropTypes.oneOf(['left', 'right', 'center', 'between']),

@@ -1,24 +1,15 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../../App'
-import View from '../../prototypes/View'
-import Text from '../../prototypes/Text'
+import components from '../components'
 
 export default function Content () {
   const { state } = useContext(StoreContext)
   return (
     <div>
       {state.content.map(v => {
-        if (v.type === 'View') {
-          return (
-            <View />
-          )
-        }
-        if (v.type === 'Text') {
-          return (
-            <Text></Text>
-          )
-        }
-        return null
+        const component = components[v.type]
+        const Component = component ? component.component : null
+        return <Component {...component.props} />
       })}
     </div>
   )

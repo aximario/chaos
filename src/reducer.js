@@ -4,7 +4,8 @@ export default function reducer (state, action) {
       return {
         ...state,
         content: state.content.concat({
-          type: 'View'
+          type: 'View',
+          props: {}
         })
       }
     }
@@ -12,7 +13,8 @@ export default function reducer (state, action) {
       return {
         ...state,
         content: state.content.concat({
-          type: 'Text'
+          type: 'Text',
+          props: {}
         })
       }
     }

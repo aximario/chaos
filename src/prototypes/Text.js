@@ -31,10 +31,6 @@ export default function Text ({ children, width, height, fontFamily, fontSize, f
   )
 }
 
-Text.defaultProps = {
-  children: 'Text'
-}
-
 Text.propTypes = {
   fontSize: PropTypes.any,
   fontFamily: PropTypes.any,
