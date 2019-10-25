@@ -1,3 +1,4 @@
 export default {
-  content: []
+  content: [],
+  currentComponent: null
 }

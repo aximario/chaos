@@ -14,6 +14,12 @@ export default function reducer (state, action) {
         content: state.content.concat(new Text())
       }
     }
+    case 'chooseComponent': {
+      return {
+        ...state,
+        currentComponent: action.payload
+      }
+    }
     default: throw new Error('no such action')
   }
 }

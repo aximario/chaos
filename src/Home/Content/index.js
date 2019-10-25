@@ -8,7 +8,7 @@ export default function Content () {
   function handleComponentClick (component) {
     return () => {
       dispatch({
-        type: 'onChooseComponent',
+        type: 'chooseComponent',
         payload: component
       })
     }
