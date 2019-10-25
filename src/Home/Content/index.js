@@ -1,15 +1,33 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../../App'
-import components from '../components'
 
 export default function Content () {
-  const { state } = useContext(StoreContext)
+  const { state, dispatch } = useContext(StoreContext)
+
+  function handleComponentClick (component) {
+    return () => {
+      dispatch({
+        type: 'onChooseComponent',
+        payload: component
+      })
+    }
+  }
+
   return (
     <div>
       {state.content.map(v => {
-        const component = components[v.type]
-        const Component = component ? component.component : null
-        return <Component {...component.props} />
+        const Component = v.component
+        const props = {}
+        v.props.forEach(k => {
+          props[k.name] = k.value
+        })
+        return (
+          <Component
+            key={v.id}
+            onClick={handleComponentClick(v)}
+            {...props}
+          />
+        )
       })}
     </div>
   )

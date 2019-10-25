@@ -1,5 +1,5 @@
 import React from 'react'
-import View from '../../prototypes/View'
+import View from '../../prototypes/models/view'
 import Icon from '../../components/Icon'
 
 export default function IconItem ({ model, size, color }) {

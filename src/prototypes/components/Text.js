@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { w, h, ff, fs, fw, ta, c, lh } from '../styleProps'
+import { w, h, ff, fs, fw, ta, c, lh } from '../../styleProps'
 
 const Span = styled.span`
   display: inline-block;

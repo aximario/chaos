@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { w, h, br, b, bg, jc, ai, fd } from '../styleProps'
-import layout from '../services/layout'
+import { w, h, br, b, bg, jc, ai, fd } from '../../styleProps'
+import layout from '../../services/layout'
 
 const Div = styled.div.attrs(layout)`
   box-sizing: border-box;
