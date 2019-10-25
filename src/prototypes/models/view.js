@@ -20,6 +20,11 @@ export default class View {
         name: 'backgroundColor',
         value: '#aaa',
         configurable: true
+      },
+      {
+        name: 'column',
+        value: false,
+        configurable: true
       }
     ]
   }

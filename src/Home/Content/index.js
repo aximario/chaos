@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../../App'
+import View from '../../prototypes/components/View'
 
 export default function Content () {
   const { state, dispatch } = useContext(StoreContext)
@@ -14,7 +15,7 @@ export default function Content () {
   }
 
   return (
-    <div>
+    <View>
       {state.content.map(v => {
         const Component = v.component
         const props = {}
@@ -29,6 +30,6 @@ export default function Content () {
           />
         )
       })}
-    </div>
+    </View>
   )
 }

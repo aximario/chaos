@@ -17,13 +17,57 @@ const Div = styled.div.attrs(layout)`
   ${ai}
 `
 
-export default function View ({ children, width, height, backgroundColor, ...props }) {
+export default function View ({ children, width, height, backgroundColor, column, horizontalAlign, verticalAlign, ...props }) {
+  let jc = 'flex-start'
+  let ai = 'flex-start'
+  if (column) {
+    if (horizontalAlign === 'right') {
+      ai = 'flex-end'
+    }
+    if (horizontalAlign === 'center') {
+      ai = 'center'
+    }
+    if (horizontalAlign === 'between') {
+      ai = 'space-between'
+    }
+    if (verticalAlign === 'right') {
+      jc = 'flex-end'
+    }
+    if (verticalAlign === 'center') {
+      jc = 'center'
+    }
+    if (verticalAlign === 'between') {
+      jc = 'space-between'
+    }
+  } else {
+    if (horizontalAlign === 'right') {
+      jc = 'flex-end'
+    }
+    if (horizontalAlign === 'center') {
+      jc = 'center'
+    }
+    if (horizontalAlign === 'between') {
+      jc = 'space-between'
+    }
+    if (verticalAlign === 'right') {
+      ai = 'flex-end'
+    }
+    if (verticalAlign === 'center') {
+      ai = 'center'
+    }
+    if (verticalAlign === 'between') {
+      ai = 'space-between'
+    }
+  }
   return (
     <Div
       {...props}
       w={width}
       h={height}
       bg={backgroundColor}
+      fd={column ? 'column' : 'row'}
+      jc={jc}
+      ai={ai}
     >{children}</Div>
   )
 }
