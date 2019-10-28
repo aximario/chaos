@@ -17,7 +17,17 @@ const Div = styled.div.attrs(layout)`
   ${ai}
 `
 
-export default function View ({ children, width, height, backgroundColor, column, horizontalAlign, verticalAlign, ...props }) {
+export default function View ({
+  children,
+  width,
+  height,
+  backgroundColor, 
+  column,
+  horizontalAlign,
+  verticalAlign,
+  borderRadius,
+  ...props
+}) {
   let jc = 'flex-start'
   let ai = 'flex-start'
   if (column) {
@@ -68,6 +78,7 @@ export default function View ({ children, width, height, backgroundColor, column
       fd={column ? 'column' : 'row'}
       jc={jc}
       ai={ai}
+      br={borderRadius}
     >{children}</Div>
   )
 }
@@ -78,5 +89,6 @@ View.propTypes = {
   verticalAlign: PropTypes.oneOf(['top', 'bottom', 'center', 'between']),
   width: PropTypes.any,
   height: PropTypes.any,
-  backgroundColor: PropTypes.any
+  backgroundColor: PropTypes.any,
+  borderRadius: PropTypes.any
 }

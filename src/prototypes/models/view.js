@@ -25,6 +25,11 @@ export default class View {
         name: 'column',
         value: false,
         configurable: true
+      },
+      {
+        name: 'borderRadius',
+        value: '0px',
+        configurable: true
       }
     ]
   }
